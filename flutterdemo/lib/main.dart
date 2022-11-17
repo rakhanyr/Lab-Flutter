@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterdemo/form.dart';
+import 'package:flutterdemo/page/form.dart';
+import 'package:flutterdemo/page/to_do_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,7 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
  
-    return Scaffold(
+    return 
+    Scaffold(
         
     appBar: AppBar(
     title: Text(widget.title),
@@ -72,6 +74,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
+            ListTile(
+            title: const Text('To Do'),
+            onTap: () {
+                // Route menu ke halaman to do
+                Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const ToDoPage()),
+                );
+            },
+          ),
           ],
         ),
       ),
